@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>বাকি হিসাব</title>
+<style>
+body{font-family:Arial;padding:20px;background:#f2f2f2;}
+input,button{padding:10px;margin:5px;width:90%;}
+table{width:100%;margin-top:20px;border-collapse:collapse;}
+td,th{border:1px solid black;padding:8px;text-align:center;}
+</style>
+</head>
+
+<body>
+
+<h2>বাকি হিসাব</h2>
+
+<input type="text" id="name" placeholder="কাস্টমারের নাম">
+<input type="number" id="baki" placeholder="মোট বাকি">
+<input type="number" id="joma" placeholder="জমা">
+
+<button onclick="addData()">হিসাব সেভ করুন</button>
+
+<table id="table">
+<tr>
+<th>নাম</th>
+<th>মোট বাকি</th>
+<th>জমা</th>
+<th>বর্তমান বাকি</th>
+</tr>
+</table>
+
+<script>
+
+function addData(){
+
+let name=document.getElementById("name").value;
+let baki=parseInt(document.getElementById("baki").value);
+let joma=parseInt(document.getElementById("joma").value);
+
+let current=baki-joma;
+
+let table=document.getElementById("table");
+
+let row=table.insertRow();
+
+row.insertCell(0).innerHTML=name;
+row.insertCell(1).innerHTML=baki;
+row.insertCell(2).innerHTML=joma;
+row.insertCell(3).innerHTML=current;
+
+}
+
+</script>
+
+</body>
+</html>
